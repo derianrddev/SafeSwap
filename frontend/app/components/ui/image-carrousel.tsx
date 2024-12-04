@@ -16,7 +16,7 @@ interface ImageCarouselProps {
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
 	return (
-		<Carousel className="w-full max-w-xs">
+		<Carousel className="w-full">
 			<div className="relative">
 				<CarouselContent>
 					{images.map((image, index) => (
@@ -27,10 +27,10 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
 										<Image
 											src={image.src}
 											alt={image.alt}
-											width={320}
-											height={320}
+											width={400}
+											height={400}
 											priority
-											className="rounded-t-lg h-[320px]"
+											className="rounded-lg"
 										/>
 									</div>
 								</CardContent>

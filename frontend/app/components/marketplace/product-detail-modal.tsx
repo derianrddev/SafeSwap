@@ -1,7 +1,8 @@
+import { ShoppingCart, Star } from "lucide-react";
+
 import { Button } from "@/app/components/ui/button";
 import ImageCarousel from "../ui/image-carrousel";
 
-import { ShoppingCart } from "lucide-react";
 interface Product {
 	id: number;
 	images: { src: string; alt: string }[];
@@ -10,7 +11,6 @@ interface Product {
 	price: number;
 	category: string;
 }
-import { Star } from "lucide-react";
 
 function ProductDetailModal({
 	isOpen,
@@ -47,13 +47,6 @@ function ProductDetailModal({
 				role="dialog"
 				aria-labelledby="product-detail-modal"
 			>
-				<button
-					onClick={onClose}
-					className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-				>
-					<span className="sr-only">Close</span>✕
-				</button>
-
 				<h2 className="text-2xl font-bold" id="product-detail-modal">
 					{product.name}
 				</h2>
@@ -61,11 +54,11 @@ function ProductDetailModal({
 					<div className="flex flex-wrap justify-center gap-4">
 						<ImageCarousel images={product.images} />
 					</div>
-					<p className="mt-4 text-lg text-gray-600">{product.category}</p>
-					<p className="mt-2 text-lg">
+					<p className="mt-4 text-medium text-gray-600">{product.category}</p>
+					<p className="text-sm text-gray-500">{product.description}</p>
+					<p className="mt-4 text-3xl font-bold">
 						{product.price ? `$${product.price}` : "Price not available"}
 					</p>
-					<p className="mt-2 text-sm text-gray-500">{product.description}</p>
 				</div>
 
 				<div className="mt-4 flex items-center">
@@ -88,19 +81,13 @@ function ProductDetailModal({
 					</span>
 				</div>
 
-				<div className="mt-6 gap-4">
-					<Button className="bg-black text-white">
+				<div className="flex justify-end space-x-4 mt-6">
+					<Button variant="secondary" onClick={onClose}>
+						Close
+					</Button>
+					<Button>
 						<ShoppingCart className="mr-2 h-4 w-4" />
 						Add to Cart
-					</Button>
-				</div>
-
-				<div className="mt-6 flex justify-end">
-					<Button
-						onClick={onClose}
-						className="bg-gray-300 text-black px-4 py-2 rounded-md"
-					>
-						Close
 					</Button>
 				</div>
 			</div>
