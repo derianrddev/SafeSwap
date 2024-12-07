@@ -41,8 +41,8 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/marketplace-escrow-stellar.git
-   cd marketplace-escrow-stellar
+   git clone https://github.com/your-username/SafeSwap.git
+   cd SafeSwap
    ```
 
 2. **Install Dependencies**:
@@ -50,17 +50,11 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
    npm install
    ```
 
-3. **Configure Environment Variables**:
-   - Create a `.env` file in the root directory and add your Stellar and Trustless Work API keys:
-     ```plaintext
-     STELLAR_SECRET_KEY=your_stellar_secret_key
-     TRUSTLESS_API_KEY=your_trustless_work_api_key
-     ```
-
-4. **Start the Application**:
-   ```bash
-   npm start
-   ```
+Available Commands:
+- `npm run web:dev` - Start development server
+- `npm run web:build` - Create production build
+- `npm run web:start` - Start production server
+- `npm run web:lint` - Run Biome linter
 
 ### Frontend
 
@@ -80,12 +74,6 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
    ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser
-
-Available Commands:
-- `npm run web:dev` - Start development server
-- `npm run web:build` - Create production build
-- `npm run web:start` - Start production server
-- `npm run web:lint` - Run Biome linter
 
 ## 📚 Documentation
 
