@@ -15,11 +15,11 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
 
 ## 🛠️ Technology Stack
 
-- **Frontend**: HTML, CSS, JavaScript, TypeScript
-- **Backend**: TBD
+- **Frontend**: Next.js, Tailwind CSS, shadcn/ui
+- **Backend**: NestJS, GraphQL (Apollo Server)
 - **Blockchain**: Stellar Network for handling decentralized, escrow-based transactions
 - **API**: Trustless Work API for managing the creation of the Smart Contracts
-- **Database**: TBD
+- **Database**: PostgreSQL
 
 ## 🔑 Key Components
 
@@ -37,49 +37,103 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
 ## 📄 Usage
 
 ### Prerequisites
-- TBD
+
+- **Node.js** version 20 or higher
+    - Refer to the [Node.js official documentation](https://nodejs.org/) to download and install the latest version.
+    - To check your installed Node.js version:
+        
+        ```bash
+        node -v
+        ```
+        
+- **npm** version 10.9.2 or higher
+    - Refer to the [npm official documentation](https://docs.npmjs.com/) for detailed instructions.
+    - To check your installed npm version:
+        
+        ```bash
+        npm -v
+        ```
+    - To globally install or update npm to version 10.9.2:
+        
+        ```bash
+        npm install -g npm@10.9.2
+        ```
+
+        After updating, recheck the version using npm -v.
 
 ### Installation
 
 1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/your-username/SafeSwap.git
-   cd SafeSwap
-   ```
-
+    
+    ```bash
+    git clone https://github.com/your-username/SafeSwap.git
+    cd SafeSwap
+    ```
+    
 2. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+    - Install the global dependencies for the monorepo and its workspaces:
+    
+    ```bash
+    npm install
+    ```
+    
+    This will install all the necessary dependencies for the applications within the `apps/*` subdirectories.
 
-Available Commands:
-- `npm run web:dev` - Start development server
-- `npm run web:build` - Create production build
-- `npm run web:start` - Start production server
-- `npm run web:lint` - Run Biome linter
+---
 
-### Frontend
+### Available Commands
 
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
+- `npm run dev` - Starts the development server of all applications.
+- `npm run build` - Builds the production version of all applications.
+- `npm run lint` - Runs the linter configured of all applications.
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+---
 
-3. Run development server:
-   ```bash
-   npm run dev
-   ```
+### Managing Dependencies and Running Specific Applications
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser
+### Adding Dependencies
+
+If you need to add a dependency to any of the applications within the monorepo, you must navigate to the respective application directory and then install the dependency from there.
+    
+### Running Specific Applications
+
+If you want to run just one of the applications instead of all of them in the monorepo, you must navigate to the corresponding directory:
+
+1. To run the **frontend** in development:
+    
+    ```bash
+    cd apps/frontend
+    npm run dev
+    ```
+    
+2. To run the **backend** in development:
+    
+    ```bash
+    cd apps/backend
+    npm run dev
+    ```
+    
+---
+
+### Applications in the Monorepo
+
+The monorepo contains the following applications:
+
+1. **Frontend (Next.js)**
+    - Description: The frontend application built with Next.js, providing the user interface for the project.
+    - Path: apps/frontend
+2. **Backend (Nest.js)**
+    - Description: The backend application built with Nest.js, handling business logic and APIs to interact with the frontend and other services.
+    - Path: apps/backend
+
+---
 
 ## 📚 Documentation
 
-For detailed frontend documentation, see the [README.md](frontend/README.md) file.
+For more details on each of the applications, please refer to the respective README files:
+
+- [Frontend Documentation](apps/frontend/README.md)
+- [Backend Documentation](apps/backend/README.md)
 
 ### How It Works
 
@@ -95,9 +149,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 We welcome contributions! Please see our [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to contribute to this project.
 
-
 ## 🧑‍💻 Authors
 
 - [danielcdz](https://github.com/danielcdz)
 - Contributions from the open-source community and OnlyDust
-

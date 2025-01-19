@@ -4,16 +4,19 @@
   "description": "Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platform for buying and selling products with escrowed payments. Powered by Stellar and integrated with the **Trustless Work API**, this marketplace offers a secure and trustless environment for transactions across various product categories.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "web:dev": "cd frontend && npm run dev",
-    "web:build": "cd frontend && npm run build",
-    "web:start": "cd frontend && npm run start",
-    "web:lint": "cd frontend && npm run lint"
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "workspaces": [
+    "apps/*"
+  ],
+  "packageManager": "npm@10.9.2",
   "devDependencies": {
-    "lefthook": "^1.8.2"
+    "lefthook": "^1.8.2",
+    "turbo": "^2.3.3"
   }
 }
