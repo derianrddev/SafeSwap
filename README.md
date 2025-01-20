@@ -97,20 +97,18 @@ If you need to add a dependency to any of the applications within the monorepo, 
     
 ### Running Specific Applications
 
-If you want to run just one of the applications instead of all of them in the monorepo, you must navigate to the corresponding directory:
+Run individual applications directly from the root directory:
 
-1. To run the **frontend** in development:
+1. **Frontend**:
     
     ```bash
-    cd apps/frontend
-    npm run dev
+    npm run dev:frontend
     ```
     
-2. To run the **backend** in development:
+2. **backend**:
     
     ```bash
-    cd apps/backend
-    npm run dev
+    npm run dev:backend
     ```
     
 ---

@@ -6,7 +6,13 @@
   "scripts": {
     "dev": "turbo dev",
     "build": "turbo build",
-    "lint": "turbo lint"
+    "lint": "turbo lint",
+    "dev:frontend": "turbo run dev --filter=frontend",
+    "dev:backend": "turbo run dev --filter=backend",
+    "build:frontend": "turbo run build --filter=frontend",
+    "build:backend": "turbo run build --filter=backend",
+    "lint:frontend": "turbo run lint --filter=frontend",
+    "lint:backend": "turbo run lint --filter=backend"
   },
   "keywords": [],
   "author": "",
