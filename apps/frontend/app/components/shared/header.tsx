@@ -32,12 +32,9 @@ export default function Header() {
 	return (
 		<>
 			<header className="flex items-center justify-between px-6 py-4 border-b">
-				<div className="flex items-center gap-4 min-w-max">
-					<Link href={"/"}>
-						<SafeSwapLogo width={150} height={40} />
-					</Link>
-					<DeliveryCountry />
-				</div>
+				<Link href={"/"}>
+					<SafeSwapLogo width={150} height={40} />
+				</Link>
 				<div className="flex items-center gap-4">
 					{showSearchBar ? (
 						<div className="relative w-full pl-2 max-w-[18.75rem] md:w-[18.75rem]">
