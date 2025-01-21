@@ -1,6 +1,7 @@
 "use client";
 
 import {
+	Bell,
 	History,
 	List,
 	Search,
@@ -59,16 +60,19 @@ export default function Header() {
 					) : null}
 				</div>
 				<div className="flex gap-1">
-					<Button variant="ghost" size="icon" className="group">
+					<Button variant="ghost" size="icon">
 						<Wallet className="!h-6 !w-6 transition-transform group-hover:scale-110" />
 					</Button>
+					<Button variant="ghost" size="icon">
+						<Bell className="!h-6 !w-6 transition-transform group-hover:scale-110" />
+					</Button>
 					<ThemeToggle />
-					<Button variant="ghost" size="icon" className="group h-auto">
+					<Button variant="ghost" size="icon">
 						<ShoppingCart className="!h-6 !w-6 transition-transform group-hover:scale-110" />
 					</Button>
 					<DropdownMenu>
 						<DropdownMenuTrigger asChild>
-							<Button variant="ghost" size="icon" className="group h-auto">
+							<Button variant="ghost" size="icon">
 								<User className="!h-6 !w-6 transition-transform group-hover:scale-110" />
 							</Button>
 						</DropdownMenuTrigger>
