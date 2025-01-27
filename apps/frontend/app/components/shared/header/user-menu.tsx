@@ -1,6 +1,14 @@
 "use client";
 
-import { Globe, List, Moon, Receipt, Settings, User, UserCircle } from "lucide-react";
+import {
+	Globe,
+	List,
+	Moon,
+	Receipt,
+	Settings,
+	User,
+	UserCircle,
+} from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 

@@ -1,22 +1,26 @@
-"use client"
+"use client";
 
 import { Bell, ShoppingCart, Wallet } from "lucide-react";
 
 import { Button } from "@/app/components/ui/button";
-import { UserMenu } from "./user-menu";
 import * as Tooltip from "@radix-ui/react-tooltip";
-import { ConnectWalletModal } from "./connect-wallet-modal";
 import { useState } from "react";
+import { ConnectWalletModal } from "./connect-wallet-modal";
+import { UserMenu } from "./user-menu";
 
 export const ActionButtons = () => {
-  const [isWalletModalOpen, setIsWalletModalOpen] = useState(false)
+	const [isWalletModalOpen, setIsWalletModalOpen] = useState(false);
 
 	return (
 		<div className="flex gap-1">
 			<Tooltip.Provider>
 				<Tooltip.Root>
 					<Tooltip.Trigger asChild>
-						<Button variant="ghost" size="icon" onClick={() => setIsWalletModalOpen(true)}>
+						<Button
+							variant="ghost"
+							size="icon"
+							onClick={() => setIsWalletModalOpen(true)}
+						>
 							<Wallet className="!h-6 !w-6 transition-transform group-hover:scale-110" />
 						</Button>
 					</Tooltip.Trigger>
@@ -28,7 +32,6 @@ export const ActionButtons = () => {
 						<span>Connect Wallet</span>
 					</Tooltip.Content>
 				</Tooltip.Root>
-
 
 				<Tooltip.Root>
 					<Tooltip.Trigger asChild>
@@ -45,7 +48,6 @@ export const ActionButtons = () => {
 					</Tooltip.Content>
 				</Tooltip.Root>
 
-
 				<Tooltip.Root>
 					<Tooltip.Trigger asChild>
 						<Button variant="ghost" size="icon">
@@ -60,7 +62,6 @@ export const ActionButtons = () => {
 						<span>Shopping Cart</span>
 					</Tooltip.Content>
 				</Tooltip.Root>
-
 
 				<Tooltip.Root>
 					<Tooltip.Trigger asChild>
@@ -77,7 +78,10 @@ export const ActionButtons = () => {
 					</Tooltip.Content>
 				</Tooltip.Root>
 			</Tooltip.Provider>
-      <ConnectWalletModal isOpen={isWalletModalOpen} onOpenChange={setIsWalletModalOpen} />
+			<ConnectWalletModal
+				isOpen={isWalletModalOpen}
+				onOpenChange={setIsWalletModalOpen}
+			/>
 		</div>
 	);
 };
