@@ -1,27 +1,26 @@
 "use client";
 
-import { useTranslations } from "@/app/hooks/useTranslations";
 import { CirclePlus, MessageSquareMore, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-import AddProductModal from "@/app/components/marketplace/add-product-modal";
-import Filters from "@/app/components/marketplace/filters";
-import { ProductsPagination } from "@/app/components/marketplace/products-pagination";
-import BreadcrumbNavigation from "@/app/components/shared/breadcrumb-navigation";
-import { Button } from "@/app/components/ui/button";
+import Filters from "@/components/marketplace/filters";
+import { ProductsPagination } from "@/components/marketplace/products-pagination";
+import BreadcrumbNavigation from "@/components/shared/breadcrumb-navigation";
+import { Button } from "@/components/ui/button";
 import {
 	Card,
 	CardContent,
 	CardFooter,
 	CardHeader,
 	CardTitle,
-} from "@/app/components/ui/card";
-import { products } from "@/constants/testDataProduct";
+} from "@/components/ui/card";
+import { products } from "@/lib/mocks/products";
 import { generateProductSlug } from "@/utils/generateProductSlug";
-import ProductsNotFound from "../components/marketplace/products-not-found";
+import { useTranslations } from "@/hooks/useTranslations";
+import ProductsNotFound from "@/components/marketplace/products-not-found";
 
 const getProductKey = (id: number) => {
 	switch (id) {
@@ -45,7 +44,6 @@ const getProductKey = (id: number) => {
 export default function ProductList() {
 	const { t } = useTranslations();
 	const router = useRouter();
-	const [showModal, setShowModal] = useState(false);
 	const [priceRange, setPriceRange] = useState<[number, number]>([0, 1500]);
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
 
@@ -156,8 +154,6 @@ export default function ProductList() {
 					<ProductsPagination />
 				</section>
 			</div>
-
-			<AddProductModal isOpen={showModal} onClose={() => setShowModal(false)} />
 		</main>
 	);
 }

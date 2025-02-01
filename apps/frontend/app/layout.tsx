@@ -2,11 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 
 import "./globals.css";
-import { ThemeProvider } from "./components/providers/theme-provider";
-import { LanguageProvider } from "./context/language-context";
+import { ThemeProvider } from "../components/providers/theme-provider";
+import { LanguageProvider } from "../context/language-context";
 
 const satoshi = localFont({
-	src: "./fonts/Satoshi.woff2",
+	src: "../fonts/Satoshi.woff2",
 	variable: "--font-satoshi",
 	weight: "100 900",
 });

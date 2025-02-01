@@ -1,8 +1,8 @@
 "use client";
 
-import { FeatureSection } from "@/app/components/home/feature-section";
-import { HeroSection } from "@/app/components/home/hero-section";
-import { StatsSection } from "@/app/components/home/stats-section";
+import { FeatureSection } from "@/components/home/feature-section";
+import { HeroSection } from "@/components/home/hero-section";
+import { StatsSection } from "@/components/home/stats-section";
 
 export default function Home() {
 	return (
