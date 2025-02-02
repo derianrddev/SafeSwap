@@ -16,12 +16,25 @@ A modern web marketplace built with Next.js, leveraging blockchain technology fo
 
 ```
 frontend/
-├── app/           # Next.js app router
-├── components/    # React components
-│   └── ui/        # shadcn/ui components
-├── lib/           # Utilities
-├── styles/        # Global styles
-└── instructions/  # Cursor AI guidelines
+├── app/           # Next.js App Router and pages
+├── components/    # Reusable React components
+│   ├── home/        # Home page components
+│   ├── marketplace/ # Marketplace-related components
+│   ├── products/    # Product-related components
+│   ├── providers/   # Context providers (e.g., ThemeProvider)
+│   ├── shared/      # Common UI elements
+│   └── ui/          # shadcn/ui components
+├── context/       # Global state and providers
+├── fonts/         # Custom and external fonts
+├── hooks/         # Custom React hooks
+├── lib/           # Core utilities and configurations
+│   ├── mocks/       # Mock data for testing
+│   ├── schemas/     # Zod validation schemas
+│   ├── types/       # TypeScript types and interfaces
+├── locales/       # i18n translation files
+├── public/        # Static assets (images, icons, etc.)
+├── utils/         # Pure utility functions (e.g., string formatting, helpers)
+docs/instructions # Project documentation and guidelines
     └── instructions.md    # Project specifications
 .cursorrules      # Development standards
 ```
