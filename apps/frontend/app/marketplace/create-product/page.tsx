@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
 import { ChevronsUpDown, X } from "lucide-react";
+import Image from "next/image";
 
-import { useCreateProductHook } from "@/hooks/useCreateProduct";
 import { Button } from "@/components/ui/button";
 import {
 	Command,
@@ -27,6 +26,7 @@ import {
 	PopoverTrigger,
 } from "@/components/ui/popover";
 import { Textarea } from "@/components/ui/textarea";
+import { useCreateProductHook } from "@/hooks/useCreateProduct";
 import { useTranslations } from "@/hooks/useTranslations";
 
 const CreateProduct = () => {

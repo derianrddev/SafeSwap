@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { Bell, ShoppingCart, Wallet } from "lucide-react";
+import { useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/hooks/useTranslations";

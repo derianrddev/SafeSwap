@@ -1,14 +1,13 @@
 "use client";
 
-import { CirclePlus, MessageSquareMore, ShoppingCart } from "lucide-react";
+import { MessageSquareMore, ShoppingCart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 import Filters from "@/components/marketplace/filters";
+import ProductsNotFound from "@/components/marketplace/products-not-found";
 import { ProductsPagination } from "@/components/marketplace/products-pagination";
-import BreadcrumbNavigation from "@/components/shared/breadcrumb-navigation";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -17,10 +16,9 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { useTranslations } from "@/hooks/useTranslations";
 import { products } from "@/lib/mocks/products";
 import { generateProductSlug } from "@/utils/generateProductSlug";
-import { useTranslations } from "@/hooks/useTranslations";
-import ProductsNotFound from "@/components/marketplace/products-not-found";
 
 const getProductKey = (id: number) => {
 	switch (id) {
@@ -43,13 +41,8 @@ const getProductKey = (id: number) => {
 
 export default function ProductList() {
 	const { t } = useTranslations();
-	const router = useRouter();
 	const [priceRange, setPriceRange] = useState<[number, number]>([0, 1500]);
 	const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-
-	const handleAddProduct = () => {
-		router.push("/marketplace/create-product");
-	};
 
 	const filteredProducts = products.filter(
 		(product) =>
@@ -60,17 +53,8 @@ export default function ProductList() {
 	);
 
 	return (
-		<main className="container p-6 mx-auto">
-			<section className="flex items-end justify-between">
-				<BreadcrumbNavigation />
-				<div className="flex justify-end">
-					<Button onClick={handleAddProduct}>
-						<CirclePlus className="mr-2 h-4 w-4" />
-						{t("common.productList.addProduct")}
-					</Button>
-				</div>
-			</section>
-			<div className="flex flex-col md:flex-row gap-6 mt-6">
+		<>
+			<div className="flex flex-col md:flex-row gap-6">
 				{/* Filters */}
 				<aside className="w-full md:w-1/4">
 					<Filters
@@ -154,6 +138,6 @@ export default function ProductList() {
 					<ProductsPagination />
 				</section>
 			</div>
-		</main>
+		</>
 	);
 }

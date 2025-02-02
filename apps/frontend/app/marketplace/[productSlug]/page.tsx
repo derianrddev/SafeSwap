@@ -6,10 +6,10 @@ import Images from "@/components/products/Images";
 import NotFound from "@/components/products/not-found";
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/hooks/useTranslations";
+import { useUtils } from "@/hooks/useUtils";
 import { products } from "@/lib/mocks/products";
 import { Product } from "@/lib/types/product";
 import { generateProductSlug } from "@/utils/generateProductSlug";
-import { useUtils } from "@/hooks/useUtils";
 
 interface ProductDetailsProps {
 	params: {
@@ -34,7 +34,7 @@ const ProductDetails = ({ params }: ProductDetailsProps) => {
 	}
 
 	return (
-		<main className="flex justify-center w-2/3 gap-10 mx-auto py-10">
+		<div className="flex justify-center gap-10">
 			{product && (
 				<section className="w-1/2">
 					<Images images={product.images} />
@@ -48,18 +48,14 @@ const ProductDetails = ({ params }: ProductDetailsProps) => {
 				</div>
 
 				<div>
-					<h3 className="font-medium mb-2">
-						{t("common.product.category")}:
-					</h3>
+					<h3 className="font-medium mb-2">{t("common.product.category")}:</h3>
 					<p className="text-gray-700 text-sm leading-relaxed">
 						{product?.category}
 					</p>
 				</div>
 
 				<div>
-					<h3 className="font-medium mb-2">
-						{t("common.product.quantity")}:
-					</h3>
+					<h3 className="font-medium mb-2">{t("common.product.quantity")}:</h3>
 					<div className="flex items-center gap-2">
 						<Button
 							size="icon"
@@ -83,9 +79,7 @@ const ProductDetails = ({ params }: ProductDetailsProps) => {
 					{product &&
 						renderStars(product.starts).map((star, index) => {
 							if (star === "filled") {
-								return (
-									<Star key={index} className="h-5 w-5 text-yellow-400" />
-								);
+								return <Star key={index} className="h-5 w-5 text-yellow-400" />;
 							} else if (star === "half") {
 								return (
 									<Star
@@ -122,7 +116,7 @@ const ProductDetails = ({ params }: ProductDetailsProps) => {
 					</Button>
 				</div>
 			</section>
-		</main>
+		</div>
 	);
 };
 

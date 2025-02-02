@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link"
 import { PackageX } from "lucide-react";
+import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/hooks/useTranslations";
@@ -18,7 +18,9 @@ const NotFound = () => {
 			</p>
 			<div className="flex gap-4">
 				<Button asChild>
-					<Link href="/marketplace">{t("common.notFound.browseMarketplace")}</Link>
+					<Link href="/marketplace">
+						{t("common.notFound.browseMarketplace")}
+					</Link>
 				</Button>
 				<Button variant="outline" asChild>
 					<Link href="/">{t("common.notFound.goHome")}</Link>

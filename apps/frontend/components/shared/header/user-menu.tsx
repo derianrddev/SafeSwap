@@ -19,9 +19,9 @@ import {
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Switch } from "@/components/ui/switch";
+import { useTranslations } from "@/hooks/useTranslations";
 import { Tooltip, TooltipContent, TooltipTrigger } from "../../ui/tooltip";
 import { LanguageSelector } from "./language-selector";
-import { useTranslations } from "@/hooks/useTranslations";
 
 export const UserMenu = () => {
 	const { t } = useTranslations();

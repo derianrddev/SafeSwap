@@ -10,11 +10,7 @@ interface LogoProps {
 	className?: string;
 }
 
-export function Logo({
-	width = 200,
-	height = 25,
-	className = "",
-}: LogoProps) {
+export function Logo({ width = 200, height = 25, className = "" }: LogoProps) {
 	const { resolvedTheme } = useTheme(); // Get the current theme
 	const [mounted, setMounted] = useState(false); // Check if the component is mounted
 
