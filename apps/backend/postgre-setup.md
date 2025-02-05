@@ -54,7 +54,7 @@ POSTGRES_PORT=5433
 
 ## Data Persistence
 
-The database data is persisted through a Docker volume named `postgres_data`. This ensures your data survives container restarts and removals.
+The database data is persisted through a Docker volume named `safeswap_data`. This ensures your data survives container restarts and removals.
 
 ## Stopping the Database
 
