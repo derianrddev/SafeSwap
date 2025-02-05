@@ -19,8 +19,6 @@ async function bootstrap() {
     origin: config.getOrThrow<string>('ALLOWED_ORIGIN'),
   });
 
-  app.setGlobalPrefix('api');
-
   await app.listen(config.getOrThrow<number>('APPLICATION_PORT'));
 }
 bootstrap();
