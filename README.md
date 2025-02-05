@@ -16,7 +16,7 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
 ## 🛠️ Technology Stack
 
 - **Frontend**: Next.js, Tailwind CSS, shadcn/ui
-- **Backend**: NestJS, GraphQL (Apollo Server)
+- **Backend**: NestJS, GraphQL (Apollo Server), Prisma
 - **Blockchain**: Stellar Network for handling decentralized, escrow-based transactions
 - **API**: Trustless Work API for managing the creation of the Smart Contracts
 - **Database**: PostgreSQL
