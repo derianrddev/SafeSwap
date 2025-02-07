@@ -2,7 +2,7 @@
 
 import { useTranslations } from "@/hooks/useTranslations";
 import { PackageSearch } from "lucide-react";
-import React, { Dispatch, SetStateAction } from "react";
+import React, { type Dispatch, type SetStateAction } from "react";
 import { Button } from "../ui/button";
 
 type ProductsNotFoundProps = {

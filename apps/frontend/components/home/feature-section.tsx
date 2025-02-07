@@ -18,8 +18,9 @@ export function FeatureSection() {
 						href="https://www.trustlesswork.com/"
 						target="_blank"
 						className="text-blue-500 hover:underline"
+						rel="noreferrer"
 					>
-						<span></span> {t("common.features.items.smartContract.link")}
+						{t("common.features.items.smartContract.link")}
 					</a>
 				</>
 			),

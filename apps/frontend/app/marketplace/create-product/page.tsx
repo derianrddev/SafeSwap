@@ -108,7 +108,7 @@ const CreateProduct = () => {
 										{...field}
 										onChange={(e) => {
 											const value = e.target.value;
-											field.onChange(value ? parseFloat(value) : 0);
+											field.onChange(value ? Number.parseFloat(value) : 0);
 										}}
 									/>
 								</FormControl>
@@ -131,7 +131,7 @@ const CreateProduct = () => {
 											<PopoverTrigger asChild>
 												<Button
 													variant="outline"
-													role="combobox"
+													aria-haspopup="listbox"
 													className="w-full justify-between"
 													aria-expanded={open}
 													onClick={() => setOpen(!open)}

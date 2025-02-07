@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/hooks/useTranslations";
 import { useUtils } from "@/hooks/useUtils";
 import { products } from "@/lib/mocks/products";
-import { Product } from "@/lib/types/product";
+import type { Product } from "@/lib/types/product";
 import { generateProductSlug } from "@/utils/generateProductSlug";
 
 interface ProductDetailsProps {
@@ -80,16 +80,16 @@ const ProductDetails = ({ params }: ProductDetailsProps) => {
 						renderStars(product.starts).map((star, index) => {
 							if (star === "filled") {
 								return <Star key={index} className="h-5 w-5 text-yellow-400" />;
-							} else if (star === "half") {
+							}
+							if (star === "half") {
 								return (
 									<Star
 										key={index}
 										className="h-5 w-5 text-yellow-400 opacity-50"
 									/>
 								);
-							} else {
-								return <Star key={index} className="h-5 w-5 text-gray-300" />;
 							}
+							return <Star key={index} className="h-5 w-5 text-gray-300" />;
 						})}
 					<span className="ml-2 text-sm text-gray-600">
 						{product?.starts.toFixed(1)} {t("common.product.reviews")}

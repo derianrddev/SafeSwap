@@ -2,7 +2,12 @@
 
 import { cn } from "@/utils/cn";
 import { Menu, X } from "lucide-react";
-import React, { createContext, useContext, useState, ReactNode } from "react";
+import React, {
+	createContext,
+	useContext,
+	useState,
+	type ReactNode,
+} from "react";
 
 interface SidebarContextType {
 	isOpen: boolean;

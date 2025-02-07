@@ -1,4 +1,4 @@
-import { ButtonProps, buttonVariants } from "@/components/ui/button";
+import { type ButtonProps, buttonVariants } from "@/components/ui/button";
 import { cn } from "@/utils/cn";
 import {
 	ChevronLeftIcon,
