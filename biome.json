@@ -28,7 +28,7 @@
 				"noNonNullAssertion": "warn",
 				"noUselessElse": "error",
 				"useForOf": "error",
-				"useImportType": "error",
+				"useImportType": "off",
 				"noArguments": "error",
 				"noVar": "error",
 				"useConst": "error"
@@ -46,6 +46,9 @@
 		}
 	},
 	"javascript": {
+		"parser": {
+			"unsafeParameterDecoratorsEnabled": true
+		},
 		"formatter": {
 			"quoteStyle": "double",
 			"semicolons": "always"
