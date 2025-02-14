@@ -141,7 +141,7 @@ For more details on each of the applications, please refer to the respective REA
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [CONTRIBUTING.md](docs/guidelines/CONTRIBUTING.md) and [GIT GUIDELINES.md](docs/guidelines/GIT_GUIDELINES.md) for details on how to contribute to this project.
+We appreciate and welcome contributions! To get started, please review our [CONTRIBUTING GUIDELINES](docs/guidelines/CONTRIBUTION_GUIDELINES.md) and [GIT GUIDELINES](docs/guidelines/GIT_GUIDELINES.md) for detailed instructions on how to contribute effectively.
 
 ## 🧑‍💻 Authors
 
