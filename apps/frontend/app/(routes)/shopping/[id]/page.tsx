@@ -1,5 +1,3 @@
 export default function ShoppingDetailsPage() {
-  return (
-    <div>ShoppingDetailsPage</div>
-  )
+	return <div>ShoppingDetailsPage</div>;
 }
