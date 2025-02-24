@@ -31,10 +31,7 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<LanguageProvider>
-						<FilterModal />
-						{children}
-					</LanguageProvider>
+					<LanguageProvider>{children}</LanguageProvider>
 				</ThemeProvider>
 			</body>
 		</html>
