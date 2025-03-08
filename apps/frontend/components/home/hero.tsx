@@ -56,7 +56,7 @@ export function Hero() {
 					</Link>
 				</div>
 
-				<div className="mt-16 flex gap-8 justify-center items-center text-sm text-muted-foreground dark:text-gray-400">
+				<div className="mt-16 mb-16 flex flex-col sm:mb-0 sm:flex-row gap-8 justify-center items-center text-sm text-muted-foreground dark:text-gray-400">
 					<div className="flex items-center gap-2">
 						<span className="inline-block w-2 h-2 rounded-full bg-green-500 dark:bg-green-400" />
 						{t("common.hero.stats.status")}:{" "}
