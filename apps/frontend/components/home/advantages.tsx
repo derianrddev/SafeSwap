@@ -1,12 +1,12 @@
 "use client";
 
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { ChevronRight, Globe, Rocket, Shield } from "lucide-react";
 
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { useTranslations } from "@/hooks/useTranslations";
 import { Button } from "../ui/button";
 
-const AdvantagesSection = () => {
+export function Advantages() {
 	const { t } = useTranslations();
 
 	const advantages = [
@@ -82,7 +82,7 @@ const AdvantagesSection = () => {
 	];
 
 	return (
-		<div className="relative bg-black/5 dark:bg-white/5 py-24 border-none">
+		<div className="relative py-12 px-4 md:px-8 dark:bg-white/5 bg-black/5 border-none">
 			<div className="max-w-6xl mx-auto px-4">
 				<h2 className="text-3xl font-bold text-center mb-4">
 					{t("advantagesOfSafeSwap.title")}
@@ -100,7 +100,11 @@ const AdvantagesSection = () => {
 								className={`absolute inset-0 opacity-0 group-hover:opacity-10 bg-gradient-to-br ${advantage.gradient} rounded-xl transition-opacity duration-300`}
 							/>
 							<div className="relative flex flex-col gap-3 items-center h-full">
-								<div className="flex justify-center p-2">{advantage.icon}</div>
+								<div
+									className={`bg-gradient-to-br ${advantage.gradient} text-white p-3 rounded-lg inline-block`}
+								>
+									{advantage.icon}
+								</div>
 								<CardTitle className="text-xl font-semibold mb-2 text-center">
 									{advantage.title}
 								</CardTitle>
@@ -115,6 +119,4 @@ const AdvantagesSection = () => {
 			</div>
 		</div>
 	);
-};
-
-export default AdvantagesSection;
+}

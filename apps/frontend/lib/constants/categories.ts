@@ -1,6 +1,10 @@
-import { Bike, Bot, Cable, HousePlus, Palette, Shirt } from "lucide-react";
+interface Category {
+	name: string;
+	src: string;
+	href: string;
+}
 
-export const CATEGORIES = [
+export const categories: Category[] = [
 	{
 		name: "Electronics",
 		href: "/categories/electronics",

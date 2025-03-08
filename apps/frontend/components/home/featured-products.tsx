@@ -22,18 +22,18 @@ import { MessageSquareMore, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function ProductCarousel() {
+export function FeaturedProducts() {
 	const { t } = useTranslations();
 
 	return (
-		<div className="w-full max-w-6xl mx-auto my-8 px-4 sm:px-6 lg:px-8 flex justify-center">
-			<div className="w-full">
-				<h2 className="text-2xl font-bold mb-4 text-center sm:text-left">
+		<section className="py-12 px-4 md:px-8 dark:bg-white/5 bg-black/5">
+			<div className="w-full max-w-6xl mx-auto my-8 px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+				<h2 className="text-3xl font-bold mb-8 text-center">
 					{t("common.featuredProductsTitle.title")}
 				</h2>
 
 				<Carousel
-					className="w-full max-w-[20rem] sm:max-w-max touch-pan-y"
+					className="w-[calc(100%-64px)] sm:max-w-max touch-pan-y"
 					opts={{ align: "start" }}
 				>
 					<CarouselContent className="-ml-1">
@@ -42,7 +42,7 @@ export default function ProductCarousel() {
 								key={product.id}
 								className="pl-1 sm:basis-1/2 md:basis-1/3 lg:basis-1/4"
 							>
-								<Card className="max-w-[20rem] w-full sm:mx-0 hover:shadow-lg">
+								<Card className="w-full sm:mx-0 hover:shadow-lg">
 									<CardHeader>
 										<div className="aspect-square overflow-hidden">
 											<Link
@@ -100,6 +100,6 @@ export default function ProductCarousel() {
 					<CarouselNext />
 				</Carousel>
 			</div>
-		</div>
+		</section>
 	);
 }

@@ -1,13 +1,15 @@
 "use client";
 
+import Link from "next/link";
+
 import { Button } from "@/components/ui/button";
 import { useTranslations } from "@/hooks/useTranslations";
-import Link from "next/link";
-export function SellerSection() {
+
+export function Seller() {
 	const { t } = useTranslations();
 
 	return (
-		<div className="relative flex flex-col px-4 justify-center items-center bg-black/5 dark:bg-white/5  py-10 overflow-hidden">
+		<div className="relative flex flex-col justify-center items-center py-12 px-4 md:px-8 dark:bg-white/5 bg-black/5 overflow-hidden">
 			<h2 className="text-3xl capitalize font-bold text-center mb-4">
 				{t("common.seller.title")}
 			</h2>

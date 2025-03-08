@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect, useCallback } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export function useStellarData() {
 	const [networkStatus, setNetworkStatus] = useState("Loading...");
@@ -9,10 +9,14 @@ export function useStellarData() {
 
 	const fetchNetworkStatus = useCallback(async () => {
 		try {
-			const res = await fetch("https://horizon.stellar.org/ledgers?order=desc&limit=1");
+			const res = await fetch(
+				"https://horizon.stellar.org/ledgers?order=desc&limit=1",
+			);
 			if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
 			const data = await res.json();
-			setNetworkStatus(data?._embedded?.records?.length > 0 ? "Active" : "Inactive");
+			setNetworkStatus(
+				data?._embedded?.records?.length > 0 ? "Active" : "Inactive",
+			);
 		} catch (error) {
 			console.error("Error fetching network status:", error);
 			setNetworkStatus("Active");
@@ -41,7 +45,8 @@ export function useStellarData() {
 		try {
 			let totalCounterAmount = 0;
 			const cutoffDate = new Date(Date.now() - 24 * 60 * 60 * 1000);
-			let url: string | null = "https://horizon.stellar.org/trades?order=desc&limit=200";
+			let url: string | null =
+				"https://horizon.stellar.org/trades?order=desc&limit=200";
 			let done = false;
 
 			while (url && !done) {
@@ -54,8 +59,11 @@ export function useStellarData() {
 					const tradeDateStr = record.created_at || record.ledger_close_time;
 					const tradeDate = new Date(tradeDateStr);
 					if (!Number.isNaN(tradeDate.getTime()) && tradeDate >= cutoffDate) {
-						totalCounterAmount += parseFloat(record.counter_amount);
-					} else if (!Number.isNaN(tradeDate.getTime()) && tradeDate < cutoffDate) {
+						totalCounterAmount += Number.parseFloat(record.counter_amount);
+					} else if (
+						!Number.isNaN(tradeDate.getTime()) &&
+						tradeDate < cutoffDate
+					) {
 						done = true;
 						break;
 					}

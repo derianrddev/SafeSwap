@@ -2,7 +2,7 @@
 
 import { useTranslations } from "@/hooks/useTranslations";
 
-export function StatsSection() {
+export function Stats() {
 	const { t } = useTranslations();
 
 	const stats = [

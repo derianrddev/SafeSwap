@@ -186,7 +186,7 @@ export const es = {
 			title: "¿Listo para empezar a vender?",
 			description:
 				"¡Únete a SafeSwap y llega a miles de compradores hoy mismo!",
-			btn_label: "Conviértete en vendedor",
+			btn_label: "Conviértete en Vendedor",
 		},
 
 		createProduct: {
@@ -266,10 +266,11 @@ export const es = {
 		chatWithSeller: "Chatear con Vendedor",
 	},
 
-	ExploreCategories: {
+	exploreCategories: {
 		title: "Explorar Categorias",
-		verTodas: "Ver todas",
+		viewAll: "Ver todas",
 	},
+
 	advantagesOfSafeSwap: {
 		title: "Impulsado por Stellar y Trustless Work",
 		subtitle:
@@ -298,6 +299,7 @@ export const es = {
 			},
 		},
 	},
+
 	howSafeSwapWorks: {
 		title: "Cómo funciona SafeSwap",
 		step1: {

@@ -187,7 +187,7 @@ export const en = {
 			title: "Ready to start selling?",
 			description:
 				"Join SafeSwap and reach thousands of potential buyers today!",
-			btn_label: "Become a seller",
+			btn_label: "Become a Seller",
 		},
 
 		createProduct: {
@@ -265,10 +265,11 @@ export const en = {
 		chatWithSeller: "Chat with Seller",
 	},
 
-	ExploreCategories: {
+	exploreCategories: {
 		title: "Explore Categories",
-		verTodas: "View All",
+		viewAll: "View All",
 	},
+
 	advantagesOfSafeSwap: {
 		title: "Powered by Stellar and Trustless Work",
 		subtitle:
@@ -297,6 +298,7 @@ export const en = {
 			},
 		},
 	},
+
 	howSafeSwapWorks: {
 		title: "How SafeSwap Works",
 		step1: {

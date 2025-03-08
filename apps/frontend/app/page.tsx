@@ -1,23 +1,23 @@
 "use client";
 
-import AdvantagesSection from "@/components/home/advantages-section";
-import { FeatureSection } from "@/components/home/feature-section";
-import { HeroSection } from "@/components/home/hero-section";
+import { Advantages } from "@/components/home/advantages";
+import { ExploreCategories } from "@/components/home/explore-categories";
+import { FeaturedProducts } from "@/components/home/featured-products";
+import { Hero } from "@/components/home/hero";
 import { HowSafeSwapWorks } from "@/components/home/how-safeswap-works";
-import { SellerSection } from "@/components/home/seller-section";
-import { StatsSection } from "@/components/home/stats-section";
-import TestimonialsCarousel from "@/components/testimonials/testimonials-carousel";
+import { Seller } from "@/components/home/seller";
+import { Testimonials } from "@/components/home/testimonials";
 
 export default function Home() {
 	return (
 		<main className="flex min-h-screen flex-col">
-			<HeroSection />
-			<StatsSection />
-			<FeatureSection />
-			<AdvantagesSection />
+			<Hero />
+			<ExploreCategories />
+			<FeaturedProducts />
+			<Advantages />
 			<HowSafeSwapWorks />
-			<SellerSection />
-			<TestimonialsCarousel />
+			<Seller />
+			<Testimonials />
 		</main>
 	);
 }
