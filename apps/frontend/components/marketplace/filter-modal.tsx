@@ -16,8 +16,8 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { useTranslations } from "@/hooks/useTranslations";
 import { Filter } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 interface FilterState {
@@ -40,7 +40,7 @@ const initialFilters: FilterState = {
 
 export default function FilterModal() {
 	const [filters, setFilters] = useState<FilterState>(initialFilters);
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	const toggleCondition = (condition: string) => {
 		setFilters((prev: FilterState) => {

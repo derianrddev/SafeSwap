@@ -10,11 +10,11 @@ import {
 	SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { Switch } from "@/components/ui/switch";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useTranslations } from "next-intl";
 import { LanguageSelector } from "./language-selector";
 
 export function SidebarSettings() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 	const { theme, setTheme } = useTheme();
 	const [mounted, setMounted] = useState(false);
 

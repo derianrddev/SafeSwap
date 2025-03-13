@@ -3,10 +3,10 @@
 import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useTranslations } from "next-intl";
 
 export function Seller() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	return (
 		<div className="relative flex flex-col justify-center items-center py-12 px-4 md:px-8 dark:bg-white/5 bg-black/5 overflow-hidden">

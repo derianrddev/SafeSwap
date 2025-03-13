@@ -3,11 +3,11 @@
 import { ChevronRight, Globe, Rocket, Shield } from "lucide-react";
 
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 
 export function Advantages() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	const advantages = [
 		{

@@ -24,7 +24,6 @@ import {
 	TooltipProvider,
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { useTranslations } from "@/hooks/useTranslations";
 import {
 	AlertCircle,
 	CheckCircle2,
@@ -33,6 +32,7 @@ import {
 	Search,
 	ShoppingBag,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import React, { useState, useEffect } from "react";
 import { ShoppingData, TabType } from "./types";
 
@@ -118,7 +118,7 @@ const getStatusIcon = (status: string) => {
 };
 
 const OrderDetails = ({ order }: { order: ShoppingData }) => {
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	return (
 		<div className="space-y-4">
@@ -187,7 +187,7 @@ const OrderDetails = ({ order }: { order: ShoppingData }) => {
 };
 
 const ShoppingTable = () => {
-	const { t } = useTranslations();
+	const t = useTranslations();
 	const [activeTab, setActiveTab] = useState<TabType>("All");
 	const [searchTerm, setSearchTerm] = useState("");
 	const [data] = useState<ShoppingData[]>(initialData);

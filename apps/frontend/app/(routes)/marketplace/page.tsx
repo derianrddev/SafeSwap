@@ -11,12 +11,12 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { useTranslations } from "@/hooks/useTranslations";
 import { products } from "@/lib/mocks/products";
 import { FilterState } from "@/lib/types/filters";
 import { generateProductSlug } from "@/utils/generateProductSlug";
 import { getProductKey } from "@/utils/getProductKey";
 import { MessageSquareMore, ShoppingBag } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -27,7 +27,7 @@ const initialFilters: FilterState = {
 };
 
 export default function ProductList() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 	const [filters, setFilters] = useState<FilterState>(initialFilters);
 	const [filteredProducts, setFilteredProducts] = useState(products);
 

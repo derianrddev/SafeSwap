@@ -3,11 +3,11 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { useTranslations } from "@/hooks/useTranslations";
 import { categories } from "@/lib/constants/categories";
+import { useTranslations } from "next-intl";
 
 export function ExploreCategories() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	return (
 		<section className="py-12 px-4 md:px-8 dark:bg-white/5 bg-black/5">

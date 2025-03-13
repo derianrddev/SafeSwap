@@ -1,8 +1,8 @@
 "use client";
 
-import { useTranslations } from "@/hooks/useTranslations";
 import { useWallet } from "@/hooks/useWallet.hook";
 import { AlertCircle, Check, Copy, LogOut } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { Button } from "../../ui/button";
@@ -43,7 +43,7 @@ export function ConnectWalletModal({
 	isOpen,
 	onOpenChange,
 }: ConnectWalletModalProps) {
-	const { t } = useTranslations();
+	const t = useTranslations();
 	const {
 		connectWallet,
 		disconnectWallet,

@@ -4,7 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useTranslations } from "next-intl";
 import { saleData } from "../../mock/sale.mock";
 import { ChatComponent } from "../utils/Chat";
 import { MilestonesTimeline } from "../utils/Milestones";
@@ -12,7 +12,7 @@ import { useSaleDetail } from "./hooks/sale-detail.hook";
 
 export default function SaleDetailPage() {
 	const { copied, handleCopy } = useSaleDetail();
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	return (
 		<div className="container mx-auto px-6 py-2 space-y-6">

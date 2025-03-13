@@ -3,13 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useTranslations } from "@/hooks/useTranslations";
 import { Send } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useChat } from "./hooks/chat.hook";
 
 export function ChatComponent() {
 	const { messages, newMessage, sendMessage, setNewMessage } = useChat();
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	return (
 		<div className="flex flex-col h-[400px] border rounded-lg p-4">

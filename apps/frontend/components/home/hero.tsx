@@ -6,13 +6,13 @@ import Link from "next/link";
 import { Logo } from "@/components/shared/logo";
 import { Button } from "@/components/ui/button";
 import { useStellarData } from "@/hooks/useStellarData";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useTranslations } from "next-intl";
 
 export function Hero() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 	const { networkStatus, gasFees, tradingVolume } = useStellarData();
 
-	const normalizedStatus = networkStatus.toLowerCase();
+	const normalizedStatus = networkStatus.toLowerCase().replace("...", "");
 	const translatedStatus = t(
 		`common.hero.stats.statusValue.${normalizedStatus}`,
 	);

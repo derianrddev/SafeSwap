@@ -2,12 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useTranslations } from "@/hooks/useTranslations";
 import { ShoppingBag } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 
 export function SalesHeader() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 	const [activeFilter, setActiveFilter] = useState("all");
 
 	const getTabKey = (tab: string) => {

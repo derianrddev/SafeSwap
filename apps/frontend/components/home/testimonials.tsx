@@ -6,7 +6,7 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useTranslations } from "next-intl";
 
 const testimonials = [
 	{
@@ -27,7 +27,7 @@ const testimonials = [
 ];
 
 export function Testimonials() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	return (
 		<section className="py-12 px-4 md:px-8 dark:bg-white/5 bg-black/5">

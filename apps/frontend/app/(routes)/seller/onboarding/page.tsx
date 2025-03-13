@@ -11,7 +11,6 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from "@/components/ui/select";
-import { useTranslations } from "@/hooks/useTranslations";
 import {
 	TSellerOnboarding,
 	sellerOnboardingSchema,
@@ -19,10 +18,11 @@ import {
 import { cn } from "@/lib/utils";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Globe, Mail, MessageSquare, Wallet } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useForm } from "react-hook-form";
 
 export default function OnboardingPage() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 	const {
 		register,
 		handleSubmit,

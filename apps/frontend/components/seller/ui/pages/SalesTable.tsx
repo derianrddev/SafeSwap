@@ -10,9 +10,9 @@ import {
 	TableHeader,
 	TableRow,
 } from "@/components/ui/table";
-import { useTranslations } from "@/hooks/useTranslations";
 import { products } from "@/lib/mocks/products";
 import { Check, ChevronDown, ChevronRight, Clock, Eye } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import React from "react";
 import { milestones } from "../../mock/milestones.mock";
@@ -40,7 +40,7 @@ const sales = products.map((product) => ({
 
 export function SalesTable() {
 	const [expandedRow, setExpandedRow] = useState<string | null>(null);
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	const getStatusBadge = (status: StatusType) => {
 		const badgeClasses: Record<StatusType, string> = {

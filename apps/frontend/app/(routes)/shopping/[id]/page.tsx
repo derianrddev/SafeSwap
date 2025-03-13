@@ -12,7 +12,6 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { useTranslations } from "@/hooks/useTranslations";
 import { products } from "@/lib/mocks/products";
 import {
 	fundReservationEscrow,
@@ -26,6 +25,7 @@ import {
 	Send,
 	ShoppingBag,
 } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 interface ShoppingDetailsPageProps {
@@ -78,7 +78,7 @@ const messages = [
 export default function ShoppingDetailsPage({
 	params,
 }: ShoppingDetailsPageProps) {
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	const product = products.find((product) => Number(params.id) === product.id);
 

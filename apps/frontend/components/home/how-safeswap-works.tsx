@@ -3,7 +3,7 @@
 import { Package, Search, ShieldCheck } from "lucide-react";
 
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useTranslations } from "next-intl";
 
 const steps = [
 	{
@@ -24,7 +24,7 @@ const steps = [
 ];
 
 export function HowSafeSwapWorks() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	return (
 		<section className="flex flex-col items-center py-12 px-4 md:px-8 dark:bg-white/5 bg-black/5">

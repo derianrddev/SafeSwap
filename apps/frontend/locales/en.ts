@@ -1,5 +1,3 @@
-import { milestones } from "@/components/seller/mock/milestones.mock";
-
 export const en = {
 	common: {
 		profile: "Profile",
@@ -141,6 +139,7 @@ export const en = {
 				statusValue: {
 					active: "Active",
 					inactive: "Inactive",
+					loading: "Loading...",
 				},
 				volume: "24h Volume",
 				volumeValue: "$1.2M",
@@ -254,6 +253,13 @@ export const en = {
 		},
 		featuredProductsTitle: {
 			title: "Featured Products",
+		},
+	},
+
+	sidebar: {
+		language: {
+			successMessage: "The website language has been successfully changed.",
+			errorMessage: "There was an error to change the website language.",
 		},
 	},
 
@@ -548,3 +554,5 @@ export const en = {
 
 	// Add more sections as needed
 };
+
+export default en;

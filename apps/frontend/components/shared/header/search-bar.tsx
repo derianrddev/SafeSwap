@@ -5,10 +5,10 @@ import { useEffect, useState } from "react";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { useTranslations } from "@/hooks/useTranslations";
+import { useTranslations } from "next-intl";
 
 export const SearchBar = () => {
-	const { t } = useTranslations();
+	const t = useTranslations();
 	const [searchTerm, setSearchTerm] = useState<string>("");
 	const [isSearchExpanded, setIsSearchExpanded] = useState(false);
 

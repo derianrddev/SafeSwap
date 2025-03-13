@@ -140,6 +140,7 @@ export const es = {
 				statusValue: {
 					active: "Activo",
 					inactive: "Inactivo",
+					loading: "Cargando...",
 				},
 				volume: "Volumen 24h",
 				volumeValue: "$1.2M",
@@ -255,6 +256,13 @@ export const es = {
 		},
 		featuredProductsTitle: {
 			title: "Productos Destacados",
+		},
+	},
+
+	sidebar: {
+		language: {
+			successMessage: "El idioma del sitio web se ha cambiado exitosamente.",
+			errorMessage: "Hubo un error al cambiar el idioma del sitio web.",
 		},
 	},
 
@@ -510,3 +518,5 @@ export const es = {
 
 	// Add more sections as needed
 };
+
+export default es;

@@ -15,15 +15,15 @@ import {
 	CarouselNext,
 	CarouselPrevious,
 } from "@/components/ui/carousel";
-import { useTranslations } from "@/hooks/useTranslations";
 import { products } from "@/lib/mocks/products";
 import { generateProductSlug } from "@/utils/generateProductSlug";
 import { MessageSquareMore, ShoppingBag } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 
 export function FeaturedProducts() {
-	const { t } = useTranslations();
+	const t = useTranslations();
 
 	return (
 		<section className="py-12 px-4 md:px-8 dark:bg-white/5 bg-black/5">
@@ -67,7 +67,7 @@ export function FeaturedProducts() {
 										</p>
 										<Link
 											href={`/marketplace/${generateProductSlug(
-												t(`common.products.items.${product.id}.name`),
+												t(`common.featuredProducts.items.${product.id}.name`),
 											)}`}
 										>
 											<CardTitle className="text-xl font-medium cursor-pointer hover:underline pt-0">

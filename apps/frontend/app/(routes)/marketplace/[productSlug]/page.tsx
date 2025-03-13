@@ -5,11 +5,11 @@ import { Share2, ShoppingBag, Star } from "lucide-react";
 import Images from "@/components/products/Images";
 import NotFound from "@/components/products/not-found";
 import { Button } from "@/components/ui/button";
-import { useTranslations } from "@/hooks/useTranslations";
 import { useUtils } from "@/hooks/useUtils";
 import { products } from "@/lib/mocks/products";
 import type { Product } from "@/lib/types/product";
 import { generateProductSlug } from "@/utils/generateProductSlug";
+import { useTranslations } from "next-intl";
 
 interface ProductDetailsProps {
 	params: {
@@ -18,7 +18,7 @@ interface ProductDetailsProps {
 }
 
 const ProductDetails = ({ params }: ProductDetailsProps) => {
-	const { t } = useTranslations();
+	const t = useTranslations();
 	const { renderStars } = useUtils();
 
 	const getProductByName = (slug: string): Product | undefined => {

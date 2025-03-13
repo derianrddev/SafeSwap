@@ -1,11 +1,10 @@
+import createNextIntlPlugin from "next-intl/plugin";
+
+const withNextIntl = createNextIntlPlugin("./lib/i18n/request.ts");
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	i18n: {
-		// These are all the locales you want to support
-		locales: ["en", "es"],
-		defaultLocale: "en",
-	},
-	// Your other Next.js config options...
+	reactStrictMode: true,
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);
