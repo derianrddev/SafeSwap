@@ -2,7 +2,7 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import Image from "next/image";
-import { useTransition } from "react";
+import { useEffect, useRef, useTransition } from "react";
 
 import { useToast } from "@/hooks/use-toast";
 import { Language } from "@/lib/i18n/config";
@@ -21,21 +21,26 @@ export const LanguageSelector = () => {
 	const { toast } = useToast();
 	const t = useTranslations();
 
+	const previousLocale = useRef(locale);
+
+	useEffect(() => {
+		if (locale !== previousLocale.current) {
+			toast({
+				description: t("sidebar.language.successMessage"),
+			});
+			previousLocale.current = locale;
+		}
+	}, [locale, toast, t]);
+
 	const handleChange = (newLang: Language) => {
 		startTransition(() => {
-			setLanguage(newLang)
-				.then(() => {
-					toast({
-						description: t("sidebar.language.successMessage"),
-					});
-				})
-				.catch((error) => {
-					console.log(error);
-					toast({
-						variant: "destructive",
-						description: t("sidebar.language.errorMessage"),
-					});
+			setLanguage(newLang).catch((error) => {
+				console.log(error);
+				toast({
+					variant: "destructive",
+					description: t("sidebar.language.errorMessage"),
 				});
+			});
 		});
 	};
 
