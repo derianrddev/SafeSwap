@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import { Toaster } from "@/components/ui/toaster";
+import { ApolloClientProvider } from "@/context/ApolloClientProvider";
 import { ThemeProvider } from "../components/providers/theme-provider";
 import { WalletProvider } from "../context/WalletContext";
 
@@ -37,7 +38,9 @@ export default async function RootLayout({
 					disableTransitionOnChange
 				>
 					<NextIntlClientProvider messages={messages}>
-						<WalletProvider>{children}</WalletProvider>
+						<ApolloClientProvider>
+							<WalletProvider>{children}</WalletProvider>
+						</ApolloClientProvider>
 						<Toaster />
 					</NextIntlClientProvider>
 				</ThemeProvider>
