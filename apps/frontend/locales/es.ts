@@ -300,8 +300,23 @@ export const es = {
 	},
 
 	exploreCategories: {
-		title: "Explorar Categorias",
-		viewAll: "Ver todas",
+		title: "Explora nuestras colecciones",
+		viewAll: "Ver todas las categorías",
+		newCollection: "NUEVA COLECCIÓN",
+		performance: "Rendimiento",
+		performanceDescription:
+			"Descubre nuestra nueva línea de calzado diseñado para superar tus límites y alcanzar tu máximo rendimiento.",
+		exploreCollection: "Explorar colección",
+		newArrivals: "RECIÉN LLEGADOS",
+		newArrivalsTitle: "Nuevos Arribos",
+		discover: "Descubrir",
+		dailyStyle: "ESTILO DIARIO",
+		casual: "Casual",
+		viewProducts: "Ver productos",
+		athletes: "Atletas",
+		basics: "BÁSICOS",
+		essentials: "Esenciales",
+		viewCollection: "Ver colección",
 	},
 
 	advantagesOfSafeSwap: {

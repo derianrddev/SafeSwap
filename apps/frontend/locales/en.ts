@@ -298,8 +298,23 @@ export const en = {
 	},
 
 	exploreCategories: {
-		title: "Explore Categories",
-		viewAll: "View All",
+		title: "Explore our collections",
+		viewAll: "View all categories",
+		newCollection: "NEW COLLECTION",
+		performance: "Performance",
+		performanceDescription:
+			"Discover our new footwear line designed to exceed your limits and reach your maximum performance.",
+		exploreCollection: "Explore collection",
+		newArrivals: "NEW ARRIVALS",
+		newArrivalsTitle: "New Arrivals",
+		discover: "Discover",
+		dailyStyle: "DAILY STYLE",
+		casual: "Casual",
+		viewProducts: "View products",
+		athletes: "Athletes",
+		basics: "BASICS",
+		essentials: "Essentials",
+		viewCollection: "View collection",
 	},
 
 	advantagesOfSafeSwap: {
