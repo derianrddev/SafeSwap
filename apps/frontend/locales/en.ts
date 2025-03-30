@@ -297,6 +297,21 @@ export const en = {
 		chatWithSeller: "Chat with Seller",
 	},
 
+	settings: {
+		aparrence: "Appearance",
+		theme: "Theme",
+		themeDescription: "Choose your preferred theme.",
+		light: "Light",
+		dark: "Dark",
+		language: "Language",
+		languageDescription: "Select your preferred language.",
+		english: "English",
+		spanish: "Spanish",
+		notifications: "Notifications",
+		notificationsLabel: "Notification Preferences",
+		notificationsDescription: "Manage your notification preferences.",
+	},
+
 	exploreCategories: {
 		title: "Explore our collections",
 		viewAll: "View all categories",
