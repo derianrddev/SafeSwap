@@ -61,6 +61,21 @@ Welcome to the **Web Marketplace with Escrow Contracts**, a decentralized platfo
 
         After updating, recheck the version using npm -v.
 
+## 🧼 Code Formatting & Linting
+
+This project uses [**Biome**](https://biomejs.dev/) for code formatting and linting to ensure consistency across the codebase.
+
+### VS Code Setup
+
+1. Install the [Biome extension](https://marketplace.visualstudio.com/items?itemName=biomejs.biome).
+2. Open settings (`Ctrl + ,` / `Cmd + ,`) and set:
+   - `editor.defaultFormatter`: `Biome`
+   - `editor.formatOnSave`: `true`
+
+Biome will auto-format your code on save and show lint issues in real time (e.g., unused variables, invalid patterns).
+
+> The project also uses Biome in Git hooks to check and format code automatically before commits and pushes.
+
 ### Installation
 
 1. **Clone the Repository**:
