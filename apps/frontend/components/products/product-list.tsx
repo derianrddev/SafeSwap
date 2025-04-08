@@ -84,6 +84,7 @@ export default function ProductList() {
 	const [pageSize, setPageSize] = useState(10);
 
 	// Reset to page 1 when filters or pageSize changes
+	// biome-ignore lint/correctness/useExhaustiveDependencies: intentionally trigger effect when filters or pageSize changes
 	useEffect(() => {
 		setCurrentPage(1);
 	}, [filters, pageSize]);

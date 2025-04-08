@@ -75,7 +75,12 @@ describe("UsersResolver", () => {
 			country: "USA",
 			isSeller: false,
 		};
-		const result = { id: 1, ...data, createdAt: new Date(), updatedAt: new Date() };
+		const result = {
+			id: 1,
+			...data,
+			createdAt: new Date(),
+			updatedAt: new Date(),
+		};
 		jest.spyOn(service, "create").mockResolvedValue(result);
 		expect(await resolver.createUser(data)).toBe(result);
 	});

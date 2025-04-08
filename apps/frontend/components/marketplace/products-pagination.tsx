@@ -32,7 +32,6 @@ export const ProductsPagination = ({
 	pageSize,
 	setPageSize,
 }: Props) => {
-
 	const t = useTranslations();
 
 	const handlePageSizeChange = (value: string) => {
@@ -52,7 +51,10 @@ export const ProductsPagination = ({
 				<label className="opacity-80" htmlFor="show-results">
 					{t("pagination.showResult")}:
 				</label>
-				<Select onValueChange={handlePageSizeChange} value={pageSize.toString()}>
+				<Select
+					onValueChange={handlePageSizeChange}
+					value={pageSize.toString()}
+				>
 					<SelectTrigger id="show-results" className="w-[70px]">
 						<SelectValue placeholder={pageSize.toString()} />
 					</SelectTrigger>
