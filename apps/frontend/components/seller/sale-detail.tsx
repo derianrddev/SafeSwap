@@ -4,11 +4,11 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
+import { useSaleDetail } from "@/hooks/sale-detail.hook";
+import { saleData } from "@/lib/mocks/seller/sale.mock";
 import { useTranslations } from "next-intl";
-import { saleData } from "../../mock/sale.mock";
-import { ChatComponent } from "../utils/Chat";
-import { MilestonesTimeline } from "../utils/Milestones";
-import { useSaleDetail } from "./hooks/sale-detail.hook";
+import { ChatBox } from "./chat-box";
+import { MilestonesTimeline } from "./milestones-timeline";
 
 export default function SaleDetailPage() {
 	const { copied, handleCopy } = useSaleDetail();
@@ -118,7 +118,7 @@ export default function SaleDetailPage() {
 						<CardTitle className="my-4">{t("saleDetails.chat")}</CardTitle>
 					</CardHeader>
 					<CardContent>
-						<ChatComponent />
+						<ChatBox />
 					</CardContent>
 				</Card>
 			</div>
