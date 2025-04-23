@@ -182,6 +182,7 @@ export const en = {
 				decrease: "Decrease quantity",
 			},
 		},
+
 		seller: {
 			title: "Ready to start selling?",
 			description:
@@ -263,6 +264,7 @@ export const en = {
 				"6": { name: "Wireless Earbuds" },
 			},
 		},
+
 		featuredProductsTitle: {
 			title: "Featured Products",
 		},
@@ -579,51 +581,14 @@ export const en = {
 	testimonials: {
 		title: "What Our Users Say",
 	},
-	filters: {
-		title: " Filter",
-		header: "Filters",
-		condition: "Condition",
-		sortBy: {
-			sortedBy: "Sort by",
-			suggested: "Suggested",
-			distance: "Distance: Nearest first",
-			dateListed: "Date listed: Newest first",
-			highPrice: "Price: Highest first",
-			lowPrice: "Price: Lowest first",
-			delivery: "Delivery Method",
-		},
-		dateListed: {
-			all: "All",
-			last24Hours: "Last 24 hours",
-			last7Days: "Last 7 days",
-			last30Days: "Last 30 days",
-		},
-		price: {
-			minPrice: "Min price",
-			maxPrice: "Max price",
-		},
-		deliveryMethod: {
-			all: "All",
-			localPickUp: "Local Pickup",
-			delivery: "Shipping",
-		},
-		button: {
-			reset: "Reset",
-			applyFilters: "Apply Filters",
-		},
-		conditions: {
-			new: "New",
-			likeNew: "like New",
-			good: "Good",
-			fair: "Fair",
-		},
-	},
+
 	pagination: {
 		showResult: "Show Result",
 		next: "Next",
 		previous: "Previous",
 		morePages: "More pages",
 	},
+
 	notFound: {
 		title: "Page Not Found",
 		message: "The page you are looking for doesn't exist or has been moved.",
@@ -637,6 +602,7 @@ export const en = {
 		paymentErrorTitle: "Payment Failed",
 		paymentErrorDescription: "There was an error processing your payment.",
 	},
+
 	categories: {
 		title: "Browse Categories",
 		description:
