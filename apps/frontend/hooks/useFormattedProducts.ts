@@ -1,4 +1,3 @@
-import { FilterState } from "@/lib/types/filters";
 import {
 	CategoriesData,
 	FormattedProduct,
@@ -9,22 +8,20 @@ import { useEffect, useState } from "react";
 
 const PLACEHOLDER_IMAGE = "/placeholder.png";
 
-export default function useFilteredProducts(
+export default function useFormattedProducts(
 	productsData: ProductsData | undefined,
 	categoriesData: CategoriesData | undefined,
 	imagesData: ProductImagesData | undefined,
-	filters: FilterState,
 	loading: boolean,
 ) {
-	const [filteredProducts, setFilteredProducts] = useState<FormattedProduct[]>(
-		[],
-	);
+	const [formattedProducts, setFormattedProducts] = useState<
+		FormattedProduct[]
+	>([]);
 
 	useEffect(() => {
 		if (productsData?.products && !loading) {
 			const categoriesMap: Record<string, string> = {};
 
-			// Replace forEach with for...of loop
 			if (categoriesData?.categories) {
 				for (const category of categoriesData.categories) {
 					categoriesMap[category.id] = category.name;
@@ -34,7 +31,6 @@ export default function useFilteredProducts(
 			const productImagesMap: Record<string, { src: string; alt: string }[]> =
 				{};
 
-			// Replace forEach with for...of loop
 			if (imagesData?.productImages) {
 				for (const image of imagesData.productImages) {
 					if (!productImagesMap[image.productId]) {
@@ -47,7 +43,7 @@ export default function useFilteredProducts(
 				}
 			}
 
-			const formattedProducts: FormattedProduct[] = productsData.products.map(
+			const result: FormattedProduct[] = productsData.products.map(
 				(product) => ({
 					id: product.id,
 					name: product.name,
@@ -64,20 +60,9 @@ export default function useFilteredProducts(
 				}),
 			);
 
-			setFilteredProducts(
-				formattedProducts.filter(
-					(product) =>
-						(filters.categories.length === 0 ||
-							filters.categories.includes(product.category)) &&
-						(filters.priceRanges.length === 0 ||
-							filters.priceRanges.some(
-								(range) =>
-									product.price >= range.min && product.price <= range.max,
-							)),
-				),
-			);
+			setFormattedProducts(result);
 		}
-	}, [productsData, categoriesData, imagesData, filters, loading]);
+	}, [productsData, categoriesData, imagesData, loading]);
 
-	return filteredProducts;
+	return formattedProducts;
 }

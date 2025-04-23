@@ -1,48 +1,29 @@
 "use client";
 
+import { ProductsPagination } from "@/components/marketplace/products-pagination";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import ProductCard from "./product-card";
 import ProductCardSkeleton from "./product-card-skeleton";
 
-import FilterModal from "@/components/marketplace/filter-modal";
-import ProductsNotFound from "@/components/marketplace/products-not-found";
-import { ProductsPagination } from "@/components/marketplace/products-pagination";
-import ProductCard from "./product-card";
-
-import useFilteredProducts from "@/hooks/useFilteredProducts";
+import useFormattedProducts from "@/hooks/useFormattedProducts";
 import {
 	GET_CATEGORIES,
 	GET_PRODUCTS,
 	GET_PRODUCT_IMAGES,
 } from "@/lib/graphql/queries";
-import type { FilterState } from "@/lib/types/filters";
 import type {
 	CategoriesData,
 	ProductImagesData,
 	ProductsData,
 } from "@/lib/types/product";
 
-const initialFilters: FilterState = {
-	categories: [],
-	priceRanges: [],
-};
-
 export default function ProductList() {
 	const t = useTranslations();
-	const [filters, setFilters] = useState<FilterState>(initialFilters);
 
-	// State for data
-	const [productsData, setProductsData] = useState<ProductsData | undefined>(
-		undefined,
-	);
-	const [categoriesData, setCategoriesData] = useState<
-		CategoriesData | undefined
-	>(undefined);
-	const [imagesData, setImagesData] = useState<ProductImagesData | undefined>(
-		undefined,
-	);
-
-	// State for loading and error
+	const [productsData, setProductsData] = useState<ProductsData>();
+	const [categoriesData, setCategoriesData] = useState<CategoriesData>();
+	const [imagesData, setImagesData] = useState<ProductImagesData>();
 	const [loading, setLoading] = useState(true);
 	const [error, setError] = useState<Error | null>(null);
 
@@ -50,7 +31,6 @@ export default function ProductList() {
 		const fetchData = async () => {
 			setLoading(true);
 			try {
-				// Fetch all data in parallel
 				const [products, categories, images] = await Promise.all([
 					GET_PRODUCTS(),
 					GET_CATEGORIES(),
@@ -61,7 +41,6 @@ export default function ProductList() {
 				if (categories) setCategoriesData(categories);
 				if (images) setImagesData(images);
 
-				// If any of the requests failed, set an error
 				if (!products || !categories || !images) {
 					setError(new Error("Failed to fetch some data"));
 				} else {
@@ -79,7 +58,6 @@ export default function ProductList() {
 		fetchData();
 	}, []);
 
-	// State for pagination
 	const [currentPage, setCurrentPage] = useState(1);
 	const [pageSize, setPageSize] = useState(10);
 
@@ -87,30 +65,24 @@ export default function ProductList() {
 	// biome-ignore lint/correctness/useExhaustiveDependencies: intentionally trigger effect when filters or pageSize changes
 	useEffect(() => {
 		setCurrentPage(1);
-	}, [filters, pageSize]);
+	}, [pageSize]);
 
-	const filteredProducts = useFilteredProducts(
+	const formattedProducts = useFormattedProducts(
 		productsData,
 		categoriesData,
 		imagesData,
-		filters,
 		loading,
 	);
 
 	const startIndex = (currentPage - 1) * pageSize;
 	const endIndex = startIndex + pageSize;
-	const paginatedProducts = filteredProducts.slice(startIndex, endIndex);
-	const totalPages = Math.ceil(filteredProducts.length / pageSize);
-
-	const handleClearFilters = () => {
-		setFilters(initialFilters);
-	};
+	const paginatedProducts = formattedProducts.slice(startIndex, endIndex);
+	const totalPages = Math.ceil(formattedProducts.length / pageSize);
 
 	return (
 		<>
 			<div className="flex justify-between mb-8">
 				<h1 className="text-4xl font-bold mt-8 sm:mt-0">Marketplace</h1>
-				<FilterModal />
 			</div>
 
 			<section className="flex-1 mt-6">
@@ -124,8 +96,8 @@ export default function ProductList() {
 					<div className="flex justify-center items-center h-64">
 						<p>Error loading products. Please try again later.</p>
 					</div>
-				) : filteredProducts.length <= 0 ? (
-					<ProductsNotFound onClear={handleClearFilters} />
+				) : formattedProducts.length <= 0 ? (
+					<p className="text-center text-gray-500">No products found.</p>
 				) : (
 					<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
 						{paginatedProducts.map((product) => (

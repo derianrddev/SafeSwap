@@ -183,6 +183,7 @@ export const es = {
 				decrease: "Disminuir cantidad",
 			},
 		},
+
 		seller: {
 			title: "¿Listo para empezar a vender?",
 			description:
@@ -255,6 +256,7 @@ export const es = {
 				},
 			},
 		},
+
 		featuredProducts: {
 			items: {
 				"1": { name: "MacBook Pro 14" },
@@ -265,6 +267,7 @@ export const es = {
 				"6": { name: "Auriculares Inalámbricos" },
 			},
 		},
+
 		featuredProductsTitle: {
 			title: "Productos Destacados",
 		},
@@ -298,6 +301,7 @@ export const es = {
 		addToCart: "Añadir al Carrito",
 		chatWithSeller: "Chatear con Vendedor",
 	},
+
 	settings: {
 		aparrence: "Apariencia",
 		theme: "Tema",
@@ -312,6 +316,7 @@ export const es = {
 		notificationsLabel: "Preferencias de notificación",
 		notificationsDescription: "Administra tus preferencias de notificación.",
 	},
+
 	exploreCategories: {
 		title: "Explora nuestras colecciones",
 		viewAll: "Ver todas las categorías",
@@ -578,54 +583,17 @@ export const es = {
 		},
 	},
 
-	filters: {
-		title: " Filtros",
-		header: "Filtros",
-		condition: "Condición",
-		sortBy: {
-			sortedBy: "Ordenado por",
-			suggested: "Sugerido",
-			distance: "Distancia: Más cercano primero",
-			dateListed: "Fecha de publicación",
-			highPrice: "Precio: Más alto primero",
-			lowPrice: "Precio: Más bajo primero",
-			delivery: "Método de entrega",
-		},
-		dateListed: {
-			all: "Todos",
-			last24Hours: "Últimas 24 horas",
-			last7Days: "Últimos 7 días",
-			last30Days: "Últimos 30 días",
-		},
-		price: {
-			minPrice: "Precio mínimo",
-			maxPrice: "Precio máximo",
-		},
-		deliveryMethod: {
-			all: "Todos",
-			localPickUp: "Recogida local",
-			delivery: "Envío",
-		},
-		button: {
-			reset: "Restablecer",
-			applyFilters: "Aplicar filtros",
-		},
-		conditions: {
-			new: "Nuevo",
-			likeNew: "Como nuevo",
-			good: "Bueno",
-			fair: "Aceptable",
-		},
-	},
 	testimonials: {
 		title: "Lo Que Dicen Nuestros Usuarios",
 	},
+
 	pagination: {
 		showResult: "Mostrar resultado",
 		next: "Siguiente",
 		previous: "Anterior",
 		morePages: "Más páginas",
 	},
+
 	notFound: {
 		title: "Página no encontrada",
 		message: "La página que estás buscando no existe o ha sido movida.",
@@ -639,6 +607,7 @@ export const es = {
 		paymentErrorTitle: "Error en el Pago",
 		paymentErrorDescription: "Hubo un error al procesar tu pago.",
 	},
+
 	categories: {
 		title: "Explorar Categorías",
 		description:
